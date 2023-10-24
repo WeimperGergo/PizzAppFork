@@ -7,9 +7,14 @@ public class PizzApp extends javax.swing.JFrame {
         
         /*int tempAr = Integer.parseInt(lblAr.getText());
         String arSzoveg = toString(tempAr);*/
+        
         double meretSzorzo = 1;
         
+        int alapAr0 = 1600;
+        int alapAr1 = 1650;
         int alapAr2 = 1750;
+        int alapAr3 = 1850;
+        
         
         //int db = numDb.getValue();
         int db = 1;
@@ -244,9 +249,7 @@ public class PizzApp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
-        if (cmdValaszthatoPizzak.equals(evt)) {
-            
-        }
+        int pizzaIndex = cmdValaszthatoPizzak.getSelectedIndex();
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
