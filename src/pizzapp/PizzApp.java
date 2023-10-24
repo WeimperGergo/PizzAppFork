@@ -4,6 +4,25 @@ public class PizzApp extends javax.swing.JFrame {
 
     public PizzApp() {
         initComponents();
+        
+        /*int tempAr = Integer.parseInt(lblAr.getText());
+        String arSzoveg = toString(tempAr);*/
+        double meretSzorzo = 1;
+        
+        int alapAr2 = 1750;
+        
+        //int db = numDb.getValue();
+        int db = 1;
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        int extrak = extra1 + extra2 + extra3;
+        
+        double osszeg = (alapAr2 * meretSzorzo + extrak);
+        osszeg *= db; //vegsoAr = vegsoAr * db;
+        
+        lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
     }
 
     @SuppressWarnings("unchecked")
@@ -35,11 +54,17 @@ public class PizzApp extends javax.swing.JFrame {
         setTitle("PizzApp");
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         lblValaszthato.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblValaszthato.setText("Választható pizza:");
 
-        cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Válassz...", "Margherita", "Hawaii", "Songoku", "Diavola" }));
+        cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Margherita", "Hawaii", "Songoku", "Diavola" }));
+        cmdValaszthatoPizzak.setSelectedIndex(2);
         cmdValaszthatoPizzak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdValaszthatoPizzakActionPerformed(evt);
@@ -83,7 +108,7 @@ public class PizzApp extends javax.swing.JFrame {
         lblFizFt.setText("Ft");
 
         lblAr.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblAr.setText("1750");
+        lblAr.setText("0");
 
         numDb.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
@@ -219,8 +244,14 @@ public class PizzApp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
-        // TODO add your handling code here:
+        if (cmdValaszthatoPizzak.equals(evt)) {
+            
+        }
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        //lblAr.setText(1750);
+    }//GEN-LAST:event_formWindowOpened
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
