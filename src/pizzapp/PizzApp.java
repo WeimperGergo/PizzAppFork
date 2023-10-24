@@ -250,6 +250,56 @@ public class PizzApp extends javax.swing.JFrame {
 
     private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
         int pizzaIndex = cmdValaszthatoPizzak.getSelectedIndex();
+        
+        double meretSzorzo = 1;
+        
+        /*int alapAr0 = 1600;
+        int alapAr1 = 1650;
+        int alapAr2 = 1750;
+        int alapAr3 = 1850;*/
+        
+        int alapAr = -1; // (-1)-el jelöljük, hogy nincs ára a pizzának.
+        switch(pizzaIndex){
+        case (0):
+            alapAr = 1600;
+            break;
+        case (1):
+            alapAr = 1650;
+            break;
+        case (2):
+            alapAr = 1750;
+            break;
+        case (3):
+            alapAr = 1800;
+            break;       
+        }
+        /*
+        if (pizzaIndex == 0){
+            alapAr = 1600;
+        }
+        else if (pizzaIndex == 1){
+            alapAr = 1650;
+        }
+        else if (pizzaIndex == 2){
+            alapAr = 1750;
+        }
+        else if (pizzaIndex == 3){
+            alapAr = 1800;
+        }
+        */
+        
+        //int db = numDb.getValue();
+        int db = 1;
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        int extrak = extra1 + extra2 + extra3;
+        
+        double osszeg = (alapAr * meretSzorzo + extrak);
+        osszeg *= db; //vegsoAr = vegsoAr * db;
+        
+        lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
