@@ -10,6 +10,7 @@ public class PizzApp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnG_meret = new javax.swing.ButtonGroup();
         lblValaszthato = new javax.swing.JLabel();
         cmdValaszthatoPizzak = new javax.swing.JComboBox<>();
         pnlMeret = new javax.swing.JPanel();
@@ -38,13 +39,19 @@ public class PizzApp extends javax.swing.JFrame {
         lblValaszthato.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblValaszthato.setText("Választható pizza:");
 
-        cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Margherita", "Hawaii", "Songoku", "Diavola" }));
-        cmdValaszthatoPizzak.setSelectedIndex(2);
+        cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Válassz...", "Margherita", "Hawaii", "Songoku", "Diavola" }));
+        cmdValaszthatoPizzak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdValaszthatoPizzakActionPerformed(evt);
+            }
+        });
 
         pnlMeret.setBorder(javax.swing.BorderFactory.createTitledBorder("Méret"));
 
+        btnG_meret.add(rdbMeret25);
         rdbMeret25.setText("25 cm");
 
+        btnG_meret.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
 
@@ -211,6 +218,10 @@ public class PizzApp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -244,6 +255,7 @@ public class PizzApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btnG_meret;
     private javax.swing.JButton btnRendel;
     private javax.swing.JCheckBox chbAnanasz;
     private javax.swing.JCheckBox chbHagyma;
