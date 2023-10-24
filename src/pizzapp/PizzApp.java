@@ -2,61 +2,25 @@ package pizzapp;
 
 public class PizzApp extends javax.swing.JFrame {
 
-    public double meretSzorzo = 1;
+    public double meretSzorzo = 1;  // 32 cm
+    public int alapAr = -1;         // -1 = nincs ára
+    public int extrak;              // extra feltétek
+    public int db;                  // Pizza darabszáma
+    public double osszeg;           // Végső ár
+    
     public PizzApp() {
         initComponents();
         
         /*int tempAr = Integer.parseInt(lblAr.getText());
         String arSzoveg = toString(tempAr);*/
-        /*
-        
-        
-        int alapAr0 = 1600;
-        int alapAr1 = 1650;
-        int alapAr2 = 1750;
-        int alapAr3 = 1850;
-        
         
         //int db = numDb.getValue();
-        int db = 1;
+        db = 1;
         
-        int extra1 = 0;
-        int extra2 = 0;
-        int extra3 = 0;
-        int extrak = extra1 + extra2 + extra3;
-        
-        double osszeg = (alapAr2 * meretSzorzo + extrak);
+        osszeg = (alapAr * meretSzorzo + extrak);
         osszeg *= db; //vegsoAr = vegsoAr * db;
         
         lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
-        */
-        
-        int alapAr = -1; // (-1)-el jelöljük, hogy nincs ára a pizzának.
-        
-        /*
-        if (pizzaIndex == 0){
-            alapAr = 1600;
-        }
-        else if (pizzaIndex == 1){
-            alapAr = 1650;
-        }
-        else if (pizzaIndex == 2){
-            alapAr = 1750;
-        }
-        else if (pizzaIndex == 3){
-            alapAr = 1800;
-        }
-        */
-        
-        //int db = numDb.getValue();
-        int db = 1;
-        
-        int extra1 = 0;
-        int extra2 = 0;
-        int extra3 = 0;
-        int extrak = extra1 + extra2 + extra3;
-        
-        double osszeg = (alapAr * meretSzorzo + extrak);
     }
 
     @SuppressWarnings("unchecked")
@@ -292,7 +256,7 @@ public class PizzApp extends javax.swing.JFrame {
         int alapAr2 = 1750;
         int alapAr3 = 1850;*/
         
-        int alapAr = -1; // (-1)-el jelöljük, hogy nincs ára a pizzának.
+        alapAr = -1; // (-1)-el jelöljük, hogy nincs ára a pizzának.
         switch(pizzaIndex){
         case (0):
             alapAr = 1600;
@@ -323,14 +287,14 @@ public class PizzApp extends javax.swing.JFrame {
         */
         
         //int db = numDb.getValue();
-        int db = 1;
+        db = 1;
         
         int extra1 = 0;
         int extra2 = 0;
         int extra3 = 0;
-        int extrak = extra1 + extra2 + extra3;
+        extrak = extra1 + extra2 + extra3;
         
-        double osszeg = (alapAr * meretSzorzo + extrak);
+        osszeg = (alapAr * meretSzorzo + extrak);
         osszeg *= db; //vegsoAr = vegsoAr * db;
         
         lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
