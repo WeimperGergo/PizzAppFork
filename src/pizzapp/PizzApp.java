@@ -17,10 +17,8 @@ public class PizzApp extends javax.swing.JFrame {
         //int db = numDb.getValue();
         db = 1;
         
-        osszeg = (alapAr * meretSzorzo + extrak);
-        osszeg *= db; //vegsoAr = vegsoAr * db;
+        osszegSzamolas();
         
-        lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
     }
 
     @SuppressWarnings("unchecked")
@@ -256,7 +254,7 @@ public class PizzApp extends javax.swing.JFrame {
         int alapAr2 = 1750;
         int alapAr3 = 1850;*/
         
-        alapAr = -1; // (-1)-el jelöljük, hogy nincs ára a pizzának.
+        // (-1)-el jelöljük, hogy nincs ára a pizzának.
         switch(pizzaIndex){
         case (0):
             alapAr = 1600;
@@ -294,25 +292,15 @@ public class PizzApp extends javax.swing.JFrame {
         int extra3 = 0;
         extrak = extra1 + extra2 + extra3;
         
-        osszeg = (alapAr * meretSzorzo + extrak);
-        osszeg *= db; //vegsoAr = vegsoAr * db;
-        
-        lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
+        osszegSzamolas();
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
     private void rdbMeret32ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret32ItemStateChanged
         meretSzorzo = 1;
-        if(rdbMeret32.isSelected() == true){
-            
-        }
     }//GEN-LAST:event_rdbMeret32ItemStateChanged
 
     private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
         meretSzorzo = 0.75;
-        
-        if(rdbMeret25.isSelected() == true){
-            
-        }
     }//GEN-LAST:event_rdbMeret25ItemStateChanged
 
     public static void main(String args[]) {
@@ -369,4 +357,12 @@ public class PizzApp extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdbMeret32;
     private javax.swing.JTextArea txaOsszesito;
     // End of variables declaration//GEN-END:variables
+
+    private void osszegSzamolas() {
+        //Ki is írja a label-be.
+        osszeg = (alapAr * meretSzorzo + extrak);
+        osszeg *= db; //vegsoAr = vegsoAr * db;
+        
+        lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
+    }
 }
