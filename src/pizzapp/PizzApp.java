@@ -2,13 +2,14 @@ package pizzapp;
 
 public class PizzApp extends javax.swing.JFrame {
 
+    public double meretSzorzo = 1;
     public PizzApp() {
         initComponents();
         
         /*int tempAr = Integer.parseInt(lblAr.getText());
         String arSzoveg = toString(tempAr);*/
+        /*
         
-        double meretSzorzo = 1;
         
         int alapAr0 = 1600;
         int alapAr1 = 1650;
@@ -28,6 +29,34 @@ public class PizzApp extends javax.swing.JFrame {
         osszeg *= db; //vegsoAr = vegsoAr * db;
         
         lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
+        */
+        
+        int alapAr = -1; // (-1)-el jelöljük, hogy nincs ára a pizzának.
+        
+        /*
+        if (pizzaIndex == 0){
+            alapAr = 1600;
+        }
+        else if (pizzaIndex == 1){
+            alapAr = 1650;
+        }
+        else if (pizzaIndex == 2){
+            alapAr = 1750;
+        }
+        else if (pizzaIndex == 3){
+            alapAr = 1800;
+        }
+        */
+        
+        //int db = numDb.getValue();
+        int db = 1;
+        
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        int extrak = extra1 + extra2 + extra3;
+        
+        double osszeg = (alapAr * meretSzorzo + extrak);
     }
 
     @SuppressWarnings("unchecked")
@@ -59,11 +88,6 @@ public class PizzApp extends javax.swing.JFrame {
         setTitle("PizzApp");
         setResizable(false);
         setType(java.awt.Window.Type.UTILITY);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         lblValaszthato.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblValaszthato.setText("Választható pizza:");
@@ -80,10 +104,20 @@ public class PizzApp extends javax.swing.JFrame {
 
         btnG_meret.add(rdbMeret25);
         rdbMeret25.setText("25 cm");
+        rdbMeret25.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret25ItemStateChanged(evt);
+            }
+        });
 
         btnG_meret.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
+        rdbMeret32.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret32ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMeretLayout = new javax.swing.GroupLayout(pnlMeret);
         pnlMeret.setLayout(pnlMeretLayout);
@@ -251,7 +285,7 @@ public class PizzApp extends javax.swing.JFrame {
     private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
         int pizzaIndex = cmdValaszthatoPizzak.getSelectedIndex();
         
-        double meretSzorzo = 1;
+        
         
         /*int alapAr0 = 1600;
         int alapAr1 = 1650;
@@ -302,9 +336,20 @@ public class PizzApp extends javax.swing.JFrame {
         lblAr.setText(osszeg + ""); //Szöveggé konvertálni nem kell, + " " -el működik!!!!!!!!!
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        //lblAr.setText(1750);
-    }//GEN-LAST:event_formWindowOpened
+    private void rdbMeret32ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret32ItemStateChanged
+        meretSzorzo = 1;
+        if(rdbMeret32.isSelected() == true){
+            
+        }
+    }//GEN-LAST:event_rdbMeret32ItemStateChanged
+
+    private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
+        meretSzorzo = 0.75;
+        
+        if(rdbMeret25.isSelected() == true){
+            
+        }
+    }//GEN-LAST:event_rdbMeret25ItemStateChanged
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
